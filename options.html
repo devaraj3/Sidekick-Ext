@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8"/>
+<title>Sidekick Settings</title>
+<style>body{font:14px system-ui;margin:24px;max-width:720px} input[type=password]{width:100%}</style>
+<h2>Sidekick Settings</h2>
+<p>Paste your OpenAI API key (stored in your browser, not sent anywhere else):</p>
+<input id="key" type="password" placeholder="sk-..." />
+<button id="save">Save</button>
+<script>
+  const key = document.getElementById('key');
+  chrome.storage.sync.get(['openaiKey'], v => key.value = v.openaiKey || "");
+  document.getElementById('save').onclick = () => {
+    chrome.storage.sync.set({ openaiKey: key.value.trim() });
+    alert('Saved.');
+  };
+</script>
