@@ -17,11 +17,6 @@
       "run_at": "document_idle"
     }
   ],
-  "commands": {
-    "toggle-assistant": {
-      "suggested_key": { "default": "Ctrl+Shift+." },
-      "description": "Toggle Sidekick overlay"
-    }
-  },
+
   "incognito": "split"
 }
